@@ -2,7 +2,6 @@
 class controller_users extends Controller_Common
 {
     public function action_index()
-
     {
         $data['users'] = Model_User::find('all');
 
@@ -48,7 +47,7 @@ class controller_users extends Controller_Common
         $this->template->title = "User";
         $this->template->content = View::forge('users/view', $data);
     }
-        public function action_logout()
+    public function action_logout()
     {
         Auth::instance()->logout();
         Response::redirect('/');
